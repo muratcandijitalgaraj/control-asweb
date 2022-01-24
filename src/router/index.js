@@ -28,6 +28,24 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/giris1/Desktop.vue"),
   },
+  {
+    path: "/bottom",
+    name: "bottom",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/giris1/Bottom.vue"),
+  },
+  {
+    path: "/giris1",
+    name: "giris1",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/giris1/Giris1.vue"),
+  },
 ];
 
 const router = new VueRouter({

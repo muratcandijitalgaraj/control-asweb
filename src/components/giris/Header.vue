@@ -18,125 +18,130 @@ export default {};
 </script>
 
 <style scoped>
-.girisHeader {
-  height: auto;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* border: 1px solid red; */
-  padding-top: 30px;
-}
-.container {
-  height: auto;
-  width: 70%;
-  /* border: 1px solid black; */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-.logoPart {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  /* margin-top: 30px; */
-}
-.logo {
-  width: auto;
-  height: auto;
-  /* border: 1px solid red; */
-  margin-right: 1.458rem;
-}
-.islemler {
-  width: auto;
-  height: auto;
+/* desktop view */
+@media only screen and (min-width: 1190px) {
+  .girisHeader {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid red; */
+    padding-top: 30px;
+  }
 
-  /* text3 */
+  .container {
+    height: auto;
+    width: 70%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 140%;
-  /* or 21px */
+  .logoPart {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin-top: 30px; */
+  }
+  .logo {
+    width: auto;
+    height: auto;
+    /* border: 1px solid red; */
+    margin-right: 1.458rem;
+  }
+  .islemler {
+    width: auto;
+    height: auto;
 
-  letter-spacing: -0.01em;
+    /* text3 */
 
-  color: #ffffff;
-}
-.signupPart {
-  height: 100%;
-  width: 100%;
-  /* border: 1px solid red; */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  /* margin-top: 30px; */
-}
-.signupPara {
-  width: 171px;
-  height: 17px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 140%;
+    /* or 21px */
 
-  /* buton-text-kucuk */
+    letter-spacing: -0.01em;
 
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 110%;
-  /* identical to box height, or 17px */
+    color: #ffffff;
+  }
+  .signupPart {
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    /* margin-top: 30px; */
+  }
+  .signupPara {
+    width: 171px;
+    height: 17px;
 
-  display: flex;
-  align-items: center;
-  text-align: center;
+    /* buton-text-kucuk */
 
-  /* Beyaz */
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
 
-  color: #ffffff;
-}
-.signupBtn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 20px 11px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-  width: 114px;
-  height: 40px;
+    /* Beyaz */
 
-  /* Beyaz */
+    color: #ffffff;
+  }
+  .signupBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px 11px;
 
-  background: #ffffff;
-  border-radius: 6px;
-  border: none;
-  color: #ff7c32;
+    width: 114px;
+    height: 40px;
 
-  /* buton-text-kucuk */
+    /* Beyaz */
 
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 110%;
-  /* identical to box height, or 17px */
+    background: #ffffff;
+    border-radius: 6px;
+    border: none;
+    color: #ff7c32;
 
-  display: flex;
-  align-items: center;
-  text-align: center;
+    /* buton-text-kucuk */
 
-  /* Button Primary */
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
 
-  color: #ff7c32;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-  /* Inside auto layout */
+    /* Button Primary */
 
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 10px;
+    color: #ff7c32;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+  }
 }
 </style>

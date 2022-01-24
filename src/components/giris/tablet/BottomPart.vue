@@ -2,8 +2,8 @@
   <div class="bottomPart">
     <div class="greyPart"></div>
     <div class="mainPart">
-      <img class="frame" src="../../assets/giris/frame.svg" alt="" />
-      <div class="wrapGroup">
+      <div class="framePart">
+        <img class="frame" src="../../../assets/giris/frame.svg" alt="" />
         <div class="textGroup">
           <div class="blueText">
             Mobil Uygulamamız ile Anadolu Sağlık
@@ -13,37 +13,37 @@
               <div class="blueText">
                 hizmetlerine <span class="orangeText">her yerden ulaşın</span>
               </div>
-              <img src="../../assets/giris/arrow.svg" alt="" class="arrow" />
+              <!-- <img src="../../../assets/giris/arrow.svg" alt="" class="arrow" /> -->
             </div>
           </div>
-        </div>
-        <div class="buttons">
-          <button class="btn">
-            <img
-              src="../../assets/giris/apple-logo.svg"
-              alt=""
-              class="btnLogo"
-            />
-            <div class="btnTextContainer">
-              <div class="btnParaTop">
-                Hemen İndirin <br />
-                <div class="btnParaDown">App Store</div>
+          <div class="buttons">
+            <button class="btn">
+              <img
+                src="../../../assets/giris/apple-logo.svg"
+                alt=""
+                class="btnLogo"
+              />
+              <div class="btnTextContainer">
+                <div class="btnParaTop">
+                  Hemen İndirin <br />
+                  <div class="btnParaDown">App Store</div>
+                </div>
               </div>
-            </div>
-          </button>
-          <button class="btn">
-            <img
-              src="../../assets/giris/google-logo.svg"
-              alt=""
-              class="btnLogo"
-            />
-            <div class="btnTextContainer">
-              <div class="btnParaTop">
-                Hemen İndirin <br />
-                <div class="btnParaDown">Google Play</div>
+            </button>
+            <button class="btn">
+              <img
+                src="../../../assets/giris/google-logo.svg"
+                alt=""
+                class="btnLogo"
+              />
+              <div class="btnTextContainer">
+                <div class="btnParaTop">
+                  Hemen İndirin <br />
+                  <div class="btnParaDown">Google Play</div>
+                </div>
               </div>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -56,10 +56,10 @@ export default {};
 
 <style scoped>
 .bottomPart {
-  height: auto;
+  height: 250px;
   /* border: 1px solid black; */
   width: 100%;
-  margin-top: 20rem;
+  /* margin-top: 20rem; */
 }
 .greyPart {
   background: #e9f3f9;
@@ -70,13 +70,23 @@ export default {};
   height: 140px;
   width: auto;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding-right: 20rem; */
+  background: #f3fafe;
   /* border: 1px solid red; */
+}
+.framePart {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-end;
-  /* flex-wrap: wrap; */
-  /* padding-right: 20rem; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid red; */
+  /* margin-bottom: 4rem; */
   background: #f3fafe;
 }
 .frame {
@@ -84,22 +94,23 @@ export default {};
   overflow: visible;
   height: 190px;
   margin-right: 48px;
+  /* background: black; */
 }
-.wrapGroup {
+/* .wrapGroup {
   width: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  /* flex-wrap: wrap; */
-}
+} */
 .textGroup {
   width: auto;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* border: 5px solid black; */
   /* flex-wrap: wrap; */
+  /* padding-top: 4rem; */
 }
 .textWithArrow {
   width: auto;
@@ -113,6 +124,7 @@ export default {};
   /* border: 1px solid blue; */
   width: auto;
   height: 52px;
+  margin-bottom: 1.5rem;
 
   /* baslik-alt2 */
 
@@ -147,21 +159,22 @@ export default {};
 
   color: #ff8038;
 }
-.arrow {
+/* .arrow {
   width: 92px;
   height: 33px;
-  /* border: 1px solid red; */
   justify-self: flex-end;
   margin-right: 30px;
-}
+} */
 .buttons {
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
   /* border: 2px solid black; */
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  background: #f3fafe;
+  /* padding-top: 2rem; */
 }
 .btn {
   /* Rectangle 6 */

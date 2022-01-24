@@ -56,10 +56,10 @@ export default {};
 
 <style scoped>
 .bottomPart {
-  height: auto;
+  height: 250px;
   /* border: 1px solid black; */
   width: 100%;
-  margin-top: 20rem;
+  margin-top: 10em;
 }
 .greyPart {
   background: #e9f3f9;
@@ -68,15 +68,12 @@ export default {};
 }
 .mainPart {
   height: 140px;
-  width: auto;
-
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
   /* flex-wrap: wrap; */
-  /* padding-right: 20rem; */
   background: #f3fafe;
 }
 .frame {
@@ -90,8 +87,7 @@ export default {};
   display: flex;
   flex-direction: row;
   justify-content: center;
-
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 .textGroup {
   width: auto;
@@ -155,12 +151,12 @@ export default {};
   margin-right: 30px;
 }
 .buttons {
-  height: auto;
+  height: 100%;
   width: auto;
   /* border: 2px solid black; */
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-self: center;
   align-items: center;
 }
 .btn {
@@ -176,7 +172,6 @@ export default {};
   justify-content: center;
   align-items: center;
   /* border: 2px solid black; */
-  margin-right: 30px;
 }
 .btnLogo {
   width: 24.75px;

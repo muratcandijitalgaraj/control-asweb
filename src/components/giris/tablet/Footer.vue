@@ -5,7 +5,7 @@
         <div class="logoPart">
           <div class="leftPart">
             <img
-              src="../../assets/giris/logoGroup.svg"
+              src="../../../assets/giris/logoGroup.svg"
               alt=""
               class="logoGroup"
             />
@@ -17,7 +17,7 @@
           </div>
           <div class="telefon">
             <img
-              src="../../assets/giris/telefon.svg"
+              src="../../../assets/giris/telefon.svg"
               alt=""
               class="telefonLogo"
             />
@@ -41,7 +41,7 @@ export default {};
 
 <style scoped>
 .footerComponent {
-  width: 100%;
+  width: auto;
   height: auto;
   background: #ffffff;
   /* border: 1px solid black; */
@@ -51,13 +51,10 @@ export default {};
   /* margin-top: 20px; */
   /* padding: 0  */
   padding-left: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
 }
 .container {
   width: 70%;
   height: auto;
-  align-self: flex-end;
 
   /* border: 10px solid black; */
 }
@@ -67,9 +64,11 @@ export default {};
 }
 .logoPart {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #f4f4f4;
+  /* border: 1px solid black; */
 }
 .leftPart {
   display: flex;
@@ -106,6 +105,8 @@ export default {};
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  /* border: 1px solid black; */
+  /* margin-top: 1rem; */
 }
 .telefonGroup {
   height: auto;
