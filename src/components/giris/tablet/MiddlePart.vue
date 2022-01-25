@@ -7,32 +7,54 @@
           <div class="giris">Giriş Yapın</div>
         </div>
         <div class="loginBox">
-          <input
-            placeholder="T.C. Kimlik Numaranız"
-            type="text"
-            class="tcKimlik"
-          />
-          <input placeholder="Şifreniz" type="text" class="sifre" />
-          <!-- space between here -->
-          <div class="loginActions">
-            <div class="hatirlaContainer">
-              <img
-                src="../../../assets/giris/check-dolu.svg"
-                alt=""
-                class="hatirlaLogo"
-              />
-              <div class="hatirlaPara">Beni Hatırla</div>
+          <form @submit="changeControl" action="">
+            <div class="inputs">
+              <div class="telBox">
+                <!-- <div class="inputCheck"> -->
+                <input placeholder="+90" type="number" class="countryCode" />
+                <!-- 
+                  <span class="errorMsg" v-if="control"></span>
+                </div> -->
+                <div class="inputCheck">
+                  <input
+                    type="number"
+                    class="telNo"
+                    placeholder="Telefon Numaranız"
+                  />
+                  <span class="errorMsg" v-if="control"
+                    >Geçerli bir telefon numarası yazın</span
+                  >
+                </div>
+              </div>
+              <div class="inputCheck">
+                <input placeholder="Şifreniz" type="password" class="sifre" />
+                <span class="errorMsg" v-if="control"
+                  >Hatalı şifre girdiniz</span
+                >
+              </div>
             </div>
-            <div class="unuttumContainer">
-              <img
-                src="../../../assets/giris/flash-circle-1.svg"
-                alt=""
-                class="unuttumLogo"
-              />
-              <div class="unuttumPara">Şifremi Unuttum</div>
+
+            <!-- space between here -->
+            <div class="loginActions">
+              <div class="hatirlaContainer">
+                <img
+                  src="../../../assets/giris/check-dolu.svg"
+                  alt=""
+                  class="hatirlaLogo"
+                />
+                <div class="hatirlaPara">Beni Hatırla</div>
+              </div>
+              <div class="unuttumContainer">
+                <img
+                  src="../../../assets/giris/flash-circle-1.svg"
+                  alt=""
+                  class="unuttumLogo"
+                />
+                <div class="unuttumPara">Şifremi Unuttum</div>
+              </div>
             </div>
-          </div>
-          <button class="loginBtn">Tamam</button>
+            <button class="loginBtn">Tamam</button>
+          </form>
         </div>
       </div>
       <div class="carouselContainer">
@@ -52,7 +74,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      control: false,
+    };
+  },
+  methods: {
+    changeControl: function (e) {
+      e.preventDefault();
+      this.control = true;
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -167,7 +201,7 @@ export default {};
   color: white;
   margin-bottom: 35px;
 }
-.loginBox {
+/* .loginBox {
   width: auto;
   height: auto;
   display: flex;
@@ -175,7 +209,8 @@ export default {};
   justify-content: center;
   align-items: center;
 }
-.tcKimlik,
+} */
+
 .sifre {
   width: 468px;
   height: 60px;
@@ -330,5 +365,106 @@ export default {};
   margin: 0px 10px;
 
   margin-top: 19px;
+}
+.loginBox {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.inputs {
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inputCheck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.errorMsg {
+  width: 239px;
+  height: 16px;
+
+  /* text05 */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 130%;
+  /* identical to box height, or 16px */
+
+  /* Kirmizi */
+
+  color: #ea5455;
+  /* border: 1px solid black; */
+}
+
+.telBox {
+  width: 100%;
+  /* height: auto; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  /* border: 4px solid black; */
+}
+.countryCode {
+  margin-right: 18px;
+  width: 103px;
+  height: 60px;
+
+  background: #ffffff;
+  /* Form Shadow */
+
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  border: none;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  letter-spacing: -0.01em;
+
+  /* Gri */
+
+  color: #818b9a;
+}
+.telNo {
+  width: 100%;
+  height: 60px;
+
+  background: #ffffff;
+  /* Form Shadow */
+
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  border: none;
+  /* form-baslik */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  letter-spacing: -0.01em;
+
+  /* Gri */
+
+  color: #818b9a;
 }
 </style>

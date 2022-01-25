@@ -31,7 +31,7 @@ export default {};
   height: auto;
   width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
 }
