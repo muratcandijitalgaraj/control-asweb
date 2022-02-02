@@ -47,11 +47,13 @@
       </form>
       <div class="bulutPart">
         <div class="orta-bulut">
-          <img
+          <!-- carousel will come here -->
+          <!-- <img
             src="../assets/giris/imageGroup-1.svg"
             alt=""
             class="imageGroup"
-          />
+          /> -->
+          <Carousel />
         </div>
       </div>
     </div>
@@ -59,7 +61,9 @@
 </template>
 
 <script>
+import Carousel from "./Carousel.vue";
 export default {
+  components: { Carousel },
   data() {
     return {
       isActive: false,
