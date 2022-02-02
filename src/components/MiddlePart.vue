@@ -323,7 +323,7 @@ export default {
 .errorMessage {
   // border: 1px solid red;
   // change opacity to 0% to hide the element without changing the layout
-  opacity: 0%;
+  opacity: 0;
   width: 239px;
   height: 16px;
   /* text05 */
@@ -338,7 +338,7 @@ export default {
   margin-left: 10px;
 }
 .active {
-  opacity: 100%;
+  opacity: 1;
 }
 //bulut part starts here
 .bulutPart {
