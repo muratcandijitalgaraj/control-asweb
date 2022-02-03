@@ -53,7 +53,9 @@
             alt=""
             class="imageGroup"
           /> -->
-          <Carousel />
+          <div class="imageGroup">
+            <Carousel />
+          </div>
         </div>
       </div>
     </div>
