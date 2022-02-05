@@ -54,7 +54,7 @@
             class="imageGroup"
           /> -->
           <div class="imageGroup">
-            <Carousel />
+            <!-- <Carousel /> -->
           </div>
         </div>
       </div>
@@ -63,9 +63,9 @@
 </template>
 
 <script>
-import Carousel from "./Carousel.vue";
+// import Carousel from "./Carousel.vue";
 export default {
-  components: { Carousel },
+  components: {},
   data() {
     return {
       isActive: false,

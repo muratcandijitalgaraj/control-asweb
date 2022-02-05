@@ -48,7 +48,7 @@ export default {};
   flex-direction: $direction;
 }
 .bottomComponent {
-  height: 100%;
+  height: 190px;
   width: 100%;
   background: linear-gradient(#e9f3f9 25%, #f3fafe 25%);
   // border: 1px solid black;
@@ -187,12 +187,17 @@ export default {};
 //tablet starts
 @media only screen and (max-width: 1170px) {
   .bottomComponent {
-    height: 290px;
+    height: auto;
+  }
+  .textGroup {
+    margin-top: 2rem;
   }
   .buttons {
     flex-direction: column;
     position: relative;
     top: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .btn {
     margin-top: 1rem;
@@ -200,7 +205,7 @@ export default {};
 }
 @media only screen and (max-width: 950px) {
   .bottomComponent {
-    height: 100%;
+    height: auto;
     // border: 2px solid red;
     margin: 0;
   }

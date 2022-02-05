@@ -13,6 +13,9 @@ export default {};
 .kayitBulutlarComponent {
   height: auto;
   width: 100%;
+  display: flex;
+  /* border: 2px solid black; */
+  justify-content: space-between;
 }
 .sol-bulut {
   height: 183px;
@@ -27,7 +30,7 @@ export default {};
   width: 425px;
   /* border: 2px solid red; */
   border-radius: 0px;
-  position: absolute;
+  /* position: absolute; */
   right: 0;
 }
 </style>
