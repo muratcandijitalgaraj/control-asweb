@@ -6,15 +6,17 @@
         <div class="headerIslemler">ONLINE İŞLEMLER</div>
       </div>
       <div class="headerSignupPart">
-        <div class="headerSignupPara">Henüz üye değil misiniz?</div>
-        <button class="headerSignupButton">Kayıt Olun</button>
+        <div class="headerSignupPara">{{ para }}</div>
+        <button class="headerSignupButton">{{ buttonText }}</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["para", "buttonText"],
+};
 </script>
 
 <style lang="scss">
@@ -86,12 +88,13 @@ export default {};
 .headerSignupPart {
   @include autoDimensions();
   @include flexCenter(row);
+
   //   @include blackBorder();
   margin-top: 55px;
 }
 .headerSignupPara {
   /* Henüz üye değil misiniz? */
-  width: 171px;
+  width: auto;
   height: 17px;
   /* buton-text-kucuk */
   font-family: Nunito Sans;
@@ -105,6 +108,8 @@ export default {};
   text-align: center;
   /* Beyaz */
   color: #ffffff;
+  // border: 1px solid red;
+  margin-right: 20px;
 }
 .headerSignupButton {
   display: flex;

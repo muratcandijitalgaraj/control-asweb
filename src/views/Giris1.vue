@@ -1,8 +1,8 @@
 <template>
   <div class="forBackgroundColor">
     <div class="mainComponent">
-      <Header class="component" />
-      <Bulutlar class="component" />
+      <Header para="Henüz üye değil misiniz?" buttonText="Kayıt Olun" />
+      <Bulutlar />
       <MiddlePart />
       <Bottom />
       <Footer />
