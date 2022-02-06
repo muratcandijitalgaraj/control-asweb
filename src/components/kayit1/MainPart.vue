@@ -701,4 +701,30 @@ input::placeholder {
 .FOUR {
   margin-top: 145px;
 }
+
+@media only screen and (max-width: 550px) {
+  input {
+    /* height: 100%; */
+    width: 325px;
+  }
+  .button {
+    width: 325px;
+  }
+  .uyruk {
+    width: 100px;
+    height: 60px;
+  }
+  .tcNo {
+    height: 60px;
+    width: 200px;
+  }
+  .dropDownSelect {
+    width: 325px;
+    /* height: 60px; */
+  }
+  .datePicker {
+    width: 325px !important;
+    /* height: 60px !important; */
+  }
+}
 </style>
