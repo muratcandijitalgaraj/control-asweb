@@ -237,6 +237,25 @@ export default {};
   flex-grow: 0;
   margin: 0px 10px;
 }
+.boxPara {
+  width: 171px;
+  height: 21px;
+
+  /* text3 */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 140%;
+  /* identical to box height, or 21px */
+
+  letter-spacing: -0.01em;
+
+  /* Primary */
+
+  color: #3c4e69;
+}
 @media only screen and (max-width: 1870px) {
   .tallCell {
     flex-direction: column;
@@ -246,9 +265,28 @@ export default {};
   .bottom {
     flex-direction: column;
   }
+  .boxes {
+    /* border: 1px solid black; */
+    width: auto;
+    margin-bottom: 1rem;
+  }
   .logoBox {
     width: 80%;
     height: 2rem;
+    align-items: center;
+  }
+  .logo {
+    height: 20px;
+    width: auto;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .boxTitle {
+    margin-bottom: 2rem;
+  }
+  .box2 {
+    margin-left: 1rem;
   }
 }
 </style>

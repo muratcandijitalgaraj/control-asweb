@@ -147,11 +147,19 @@ export default {};
   .boxes {
     /* border: 1px solid black; */
     width: auto;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   .logoBox {
     width: 80%;
     height: 2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .boxTitle {
+    margin-bottom: 2rem;
+  }
+  .box2 {
+    margin-left: 1rem;
   }
 }
 </style>

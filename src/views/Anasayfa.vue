@@ -70,6 +70,8 @@ export default {
   background: #f2f8fb;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   /* margin-bottom: 5px; */
   display: flex;
 }
@@ -105,8 +107,11 @@ export default {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 750px) {
   .zemin {
+    width: 95%;
+  }
+  .footerContainer {
     width: 95%;
   }
 }

@@ -95,4 +95,11 @@ export default {};
   align-items: center;
   color: #ffffff;
 }
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 </style>

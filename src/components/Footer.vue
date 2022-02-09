@@ -155,7 +155,7 @@ export default {};
   margin-top: 16px;
 }
 /* tablet */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1700px) {
   .flexContainer {
     display: flex;
     flex-direction: column;
@@ -174,6 +174,10 @@ export default {};
   .leftPart {
     margin-bottom: 1rem;
     width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* border: 1px solid black; */
   }
   .footerPara {
