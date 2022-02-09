@@ -1,37 +1,29 @@
 <template>
   <div class="bigContainer">
     <div class="cards">
-      <div class="cardContainer">
-        <div class="card card1">
-          <img
-            src="../../assets/anasayfa/randevu-alin.svg"
-            alt=""
-            class="cardLogo"
-          />
-          <div class="cardPara">Hastane Randevusu Alın</div>
-        </div>
-        <div class="card card2">
-          <img
-            src="../../assets/anasayfa/goruntulu.svg"
-            alt=""
-            class="cardLogo"
-          />
-          <div class="cardPara">Hastane Randevusu Alın</div>
-        </div>
+      <div class="card card1">
+        <img
+          src="../../assets/anasayfa/randevu-alin.svg"
+          alt=""
+          class="cardLogo"
+        />
+        <div class="cardPara">Hastane Randevusu Alın</div>
       </div>
-      <div class="cardContainer">
-        <div class="card card3">
-          <img
-            src="../../assets/anasayfa/check-up.svg"
-            alt=""
-            class="cardLogo"
-          />
-          <div class="cardPara">Hastane Randevusu Alın</div>
-        </div>
-        <div class="card card4">
-          <img src="../../assets/anasayfa/destek.svg" alt="" class="cardLogo" />
-          <div class="cardPara">Hastane Randevusu Alın</div>
-        </div>
+      <div class="card card2">
+        <img
+          src="../../assets/anasayfa/goruntulu.svg"
+          alt=""
+          class="cardLogo"
+        />
+        <div class="cardPara">Hastane Randevusu Alın</div>
+      </div>
+      <div class="card card3">
+        <img src="../../assets/anasayfa/check-up.svg" alt="" class="cardLogo" />
+        <div class="cardPara">Hastane Randevusu Alın</div>
+      </div>
+      <div class="card card4">
+        <img src="../../assets/anasayfa/destek.svg" alt="" class="cardLogo" />
+        <div class="cardPara">Hastane Randevusu Alın</div>
       </div>
     </div>
     <div class="greyLine"></div>
@@ -44,6 +36,9 @@ export default {};
 
 <style scoped>
 .bigContainer {
+  /* margin: 0;
+  padding: 0; */
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -116,30 +111,38 @@ export default {};
   color: #3c4e69;
 }
 @media only screen and (max-width: 1500px) {
-  .cards {
+  /* .cards {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-  }
+  } */
   .card {
     width: 210px;
     /* border: 2px solid black; */
   }
 }
-@media only screen and (max-width: 1200px) {
-  .cards {
+@media only screen and (max-width: 1000px) {
+  /* .cards {
     flex-direction: column;
     justify-content: flex-start;
-  }
+  } */
   .cardContainer {
     flex-direction: column;
     /* border: 2px solid red; */
     align-items: center;
   }
+  .cards {
+    flex-wrap: wrap;
+  }
   .card {
-    width: 100%;
-    /* border: 2px solid black; */
+    width: 210px;
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .card {
+    width: auto;
   }
 }
 </style>

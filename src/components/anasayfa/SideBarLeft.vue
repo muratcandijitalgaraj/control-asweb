@@ -24,6 +24,7 @@
     <div class="item">
       <img src="../../assets/sidebar/kayitlar.svg" alt="" class="itemLogo" />
       <div class="itemPara">Tıbbi Kayıtlar</div>
+      <img src="../../assets/sidebar/1.svg" alt="" class="notification" />
     </div>
     <div class="item">
       <img src="../../assets/sidebar/gecmis.svg" alt="" class="itemLogo" />
@@ -54,7 +55,7 @@ export default {};
 
 <style scoped>
 .sideBar {
-  height: auto;
+  height: 100%;
   width: 270px;
   display: flex;
   flex-direction: column;
@@ -114,7 +115,7 @@ export default {};
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   /* border: 1px solid black; */
 }
 .itemLogo {
@@ -140,5 +141,10 @@ export default {};
 
   color: #3c4e69;
   /* border: 1px solid red; */
+}
+.notification {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
 }
 </style>

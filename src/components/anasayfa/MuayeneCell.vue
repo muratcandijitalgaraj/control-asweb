@@ -265,7 +265,7 @@ export default {};
   width: 20px;
   height: 20px;
 }
-@media only screen and (max-width: 1870px) {
+@media only screen and (max-width: 1250px) {
   .tallCell {
     flex-direction: column;
     justify-content: center;

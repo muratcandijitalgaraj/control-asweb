@@ -1,9 +1,18 @@
 <template>
   <div class="cell">
-    <div class="logoBox">
+    <div class="firstBox hideOnTablet">
+      <div class="logoBox">
+        <img src="../../assets/anasayfa/gorusme.svg" alt="" class="logo" />
+      </div>
+      <div class="boxes box1">
+        <div class="boxTitle redTitle">Görüşme Bekleniyor</div>
+        <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
+      </div>
+    </div>
+    <div class="logoBox hideOnDesktop">
       <img src="../../assets/anasayfa/gorusme.svg" alt="" class="logo" />
     </div>
-    <div class="boxes box1">
+    <div class="boxes box1 hideOnDesktop">
       <div class="boxTitle redTitle">Görüşme Bekleniyor</div>
       <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
     </div>
@@ -45,7 +54,7 @@ export default {};
   border-radius: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -67,6 +76,7 @@ export default {};
   justify-content: center;
   background: #f2f8fb;
   border-radius: 5px;
+  margin-right: 15px;
 }
 .logo {
   height: 20px;
@@ -101,6 +111,8 @@ export default {};
 }
 .box1 {
   width: 171px;
+
+  /* justify-self: flex-start; */
 }
 .box2 {
   width: 292px;
@@ -140,26 +152,51 @@ export default {};
   height: 22px;
   margin-right: 1rem;
 }
-@media only screen and (max-width: 1870px) {
+/* @media only screen and (max-width: 1650px) {
+  .cell {
+    justify-content: center;
+    height: auto;
+  }
+} */
+.firstBox {
+  display: flex;
+}
+.hideOnDesktop {
+  display: none;
+}
+.hideOnTablet {
+  display: block;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 1250px) {
+  .hideOnTablet {
+    display: none;
+  }
+  .hideOnDesktop {
+    display: block;
+  }
   .cell {
     height: auto;
+    justify-content: center;
   }
   .boxes {
     /* border: 1px solid black; */
     width: auto;
-    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   .logoBox {
     width: 80%;
     height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
-@media only screen and (max-width: 400px) {
-  .boxTitle {
-    margin-bottom: 2rem;
+  .box1 {
   }
-  .box2 {
-    margin-left: 1rem;
+  .logo {
   }
 }
 </style>

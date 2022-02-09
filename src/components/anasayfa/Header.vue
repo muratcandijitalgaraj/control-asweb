@@ -29,7 +29,7 @@ export default {};
 <style scoped>
 .anasayfaHeader {
   height: auto;
-  width: 65%;
+  width: 100%;
 }
 .container {
   height: 100%;
@@ -95,6 +95,13 @@ export default {};
   align-items: center;
   color: #ffffff;
 }
+@media only screen and (min-width: 1400px) {
+  .container {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .container {
     flex-direction: column;

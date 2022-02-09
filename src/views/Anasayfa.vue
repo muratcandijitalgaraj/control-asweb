@@ -3,19 +3,21 @@
     <Header />
     <!-- <img src="../assets/anasayfa/bulutlar.svg" alt="" class="bulutlar" /> -->
     <div class="zemin">
-      <div id="sideBarLeft">
-        <SideBarLeft />
+      <div class="zeminRow">
+        <div id="sideBarLeft">
+          <SideBarLeft />
+        </div>
+        <div id="sideBarTop">
+          <SideBarTop />
+        </div>
+        <div class="rightPart">
+          <Cards />
+          <Randevularim />
+        </div>
       </div>
-      <div id="sideBarTop">
-        <SideBarTop />
+      <div class="footerContainer">
+        <Footer />
       </div>
-      <div class="rightPart">
-        <Cards />
-        <Randevularim />
-      </div>
-    </div>
-    <div class="footerContainer">
-      <Footer />
     </div>
   </div>
 </template>
@@ -46,7 +48,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* border: 6px solid black; */
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -64,8 +65,23 @@ export default {
   margin-top: 27px;
   /* zemin */
   /* border: 2px solid red; */
-  width: 65%;
-  height: auto;
+  width: auto;
+  height: 100%;
+
+  background: #f2f8fb;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  /* margin-bottom: 5px; */
+  display: flex;
+  flex-direction: column;
+}
+.zeminRow {
+  /* margin-top: 27px; */
+  /* zemin */
+  width: auto;
+  height: 100%;
 
   background: #f2f8fb;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
@@ -77,6 +93,7 @@ export default {
 }
 #sideBarLeft {
   width: auto;
+  height: 100%;
 }
 #sideBarTop {
   display: none;
@@ -84,21 +101,28 @@ export default {
 .rightPart {
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
-  width: auto;
+  width: 100%;
 }
 .footerContainer {
   height: auto;
-  width: 65%;
+  width: auto;
+  /* border: 2px solid black; */
 }
-@media only screen and (max-width: 1500px) {
+/* @media only screen and (min-width: 1500px) {
+  .zemin {
+    width: 75%;
+  }
+} */
+@media only screen and (max-width: 1250px) {
   #sideBarLeft {
     display: none;
   }
   #sideBarTop {
     display: block;
   }
-  .zemin {
+  .zeminRow {
+    width: auto;
+
     height: auto;
     flex-direction: column;
   }
@@ -108,11 +132,11 @@ export default {
   }
 }
 @media only screen and (max-width: 750px) {
-  .zemin {
-    width: 95%;
+  .zeminRow {
+    width: auto;
   }
   .footerContainer {
-    width: 95%;
+    width: auto;
   }
 }
 </style>

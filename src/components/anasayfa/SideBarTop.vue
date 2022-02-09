@@ -34,7 +34,14 @@
               alt=""
               class="itemLogo"
             />
-            <div class="itemPara">Tıbbi Kayıtlar</div>
+            <div class="itemPara">
+              Tıbbi Kayıtlar
+              <img
+                src="../../assets/sidebar/1.svg"
+                alt=""
+                class="notification"
+              />
+            </div>
           </div>
           <div class="item">
             <img
@@ -190,6 +197,13 @@ export default {};
   justify-content: center;
   align-items: center;
 }
+.item {
+  display: flex;
+  justify-content: flex-start;
+}
+.itemPara {
+  width: auto;
+}
 .upperItem {
   /* border: 1px solid black; */
   height: auto;
@@ -240,6 +254,10 @@ export default {};
   margin-left: 10px;
   margin-right: 10px;
 }
+/* .item{
+    width: 200px;
+
+} */
 .itemPara {
   width: 200px;
   height: 22px;
@@ -257,6 +275,11 @@ export default {};
 
   color: #3c4e69;
   /* border: 1px solid red; */
+}
+.notification {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
 }
 @media only screen and (max-width: 1700px) {
   .container {

@@ -57,6 +57,7 @@ export default {};
   box-shadow: 0px 1px 3px rgba(42, 49, 55, 0.11);
   border-radius: 10px;
   display: flex;
+  /* border: 2px solid black; */
 }
 .greyLine {
   width: 80%;
@@ -90,13 +91,15 @@ export default {};
   align-items: center;
 }
 .top {
-  width: auto;
+  width: 100%;
   height: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 .boxes {
   height: auto;
@@ -163,6 +166,7 @@ export default {};
   justify-content: center;
   background: #f2f8fb;
   border-radius: 5px;
+  margin-right: 15px;
 }
 .bottom {
   display: flex;
@@ -256,7 +260,7 @@ export default {};
 
   color: #3c4e69;
 }
-@media only screen and (max-width: 1870px) {
+@media only screen and (max-width: 1250px) {
   .tallCell {
     flex-direction: column;
     justify-content: center;
@@ -279,6 +283,11 @@ export default {};
     height: 20px;
     width: auto;
     margin: 0;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  .top {
+    justify-content: center;
   }
 }
 @media only screen and (max-width: 400px) {
