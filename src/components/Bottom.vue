@@ -48,7 +48,7 @@ export default {};
   flex-direction: $direction;
 }
 .bottomComponent {
-  height: 190px;
+  height: 100%;
   width: 100%;
   background: linear-gradient(#e9f3f9 25%, #f3fafe 25%);
   // border: 1px solid black;
@@ -78,7 +78,6 @@ export default {};
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 2rem;
 }
 .arrow {
   position: relative;
@@ -125,7 +124,6 @@ export default {};
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 2rem;
 }
 .btn {
   /* Rectangle 6 */
@@ -189,17 +187,12 @@ export default {};
 //tablet starts
 @media only screen and (max-width: 1170px) {
   .bottomComponent {
-    height: auto;
-  }
-  .textGroup {
-    margin-top: 2rem;
+    height: 290px;
   }
   .buttons {
     flex-direction: column;
     position: relative;
     top: 1rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
   .btn {
     margin-top: 1rem;
@@ -207,7 +200,7 @@ export default {};
 }
 @media only screen and (max-width: 950px) {
   .bottomComponent {
-    height: auto;
+    height: 100%;
     // border: 2px solid red;
     margin: 0;
   }

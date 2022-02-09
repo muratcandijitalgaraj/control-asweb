@@ -33,11 +33,11 @@ export default {};
 
 <style scoped>
 .footerComponent {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   width: 100%;
   height: auto;
   background: #ffffff;
-  /* border: 1px solid black; */
+  /* border: 10px solid black; */
   display: flex;
   flex-direction: row;
   justify-content: center;

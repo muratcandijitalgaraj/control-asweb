@@ -29,6 +29,15 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Giris1.vue"),
   },
   {
+    path: "/anasayfa",
+    name: "Anasayfa",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Anasayfa.vue"),
+  },
+  {
     path: "/carousel",
     name: "carousel",
     // route level code-splitting

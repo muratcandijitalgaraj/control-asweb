@@ -4,8 +4,6 @@
       <Header para="Üye misiniz?" buttonText="Giriş Yap" />
       <Bulutlar />
       <MainPart />
-      <Bottom />
-      <Footer />
     </div>
   </div>
 </template>
@@ -14,11 +12,9 @@
 import Header from "../components/Header.vue";
 import Bulutlar from "../components/kayit1/Bulutlar.vue";
 import MainPart from "../components/kayit1/MainPart.vue";
-import Bottom from "../components/Bottom.vue";
-import Footer from "../components/Footer.vue";
 
 export default {
-  components: { Header, Bulutlar, MainPart, Bottom, Footer },
+  components: { Header, Bulutlar, MainPart },
 };
 </script>
 
