@@ -8,7 +8,7 @@
       <b-row class="sideBarTopRow">
         <!-- <b-col cols="3" class="sideBar"><SideBar /></b-col> -->
         <b-col class="sideBarTop">
-          <SideBarTop />
+          <SideBarTop class="sideBarTop" />
         </b-col>
       </b-row>
       <b-row class="greyPart">
@@ -39,7 +39,7 @@
           </b-row>
         </b-col>
       </b-row>
-      <b-row class="footer"> footer </b-row>
+      <b-row class="footer"> <Footer /> </b-row>
     </b-container>
   </div>
 </template>
@@ -53,6 +53,7 @@ import SideBarTop from "../components/anasayfa-old/SideBarTop.vue";
 import Cards from "../components/anasayfa/Cards.vue";
 import Randevulariniz from "../components/anasayfa/Randevulariniz.vue";
 import Muayeneler from "../components/anasayfa/Muayeneler.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   components: {
@@ -62,6 +63,7 @@ export default {
     Cards,
     Randevulariniz,
     Muayeneler,
+    Footer,
   },
 };
 </script>
@@ -155,7 +157,6 @@ export default {
 .footer {
   height: 200px;
   width: auto;
-  border: 5px solid black;
 }
 
 /* .bulutlar {
@@ -184,21 +185,28 @@ export default {
   height: auto;
 }
 
-.sideBarTop {
-  display: none;
-}
 .sideBarTopRow {
+  display: none;
   width: auto;
 }
-@media only screen and (max-width: 992px) {
+.sideBarTop {
+}
+@media screen and (max-width: 992px) {
   .sideBar {
     display: none;
   }
-  .sideBarTop {
-    display: block;
-    /* border: solid; */
-    width: 100%;
+  .sideBarTopRow {
+    display: block !important;
+    width: auto;
     padding: 0;
+  }
+  .sideBarTop {
+    display: block !important;
+    width: auto;
+    padding: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
   }
   .greyPart {
     border-radius: 0px;

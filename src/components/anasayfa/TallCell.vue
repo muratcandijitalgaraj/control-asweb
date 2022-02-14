@@ -275,7 +275,7 @@ export default {};
   }
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 1400px) {
   .bottomButton {
     padding-right: 3rem;
   }

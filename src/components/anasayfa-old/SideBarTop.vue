@@ -157,8 +157,8 @@ export default {};
   background: #f9fdff;
   border-top-left-radius: 18px;
   border-top-right-radius: 18px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  /* border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; */
   /* flex-wrap: wrap; */
 }
 .collapsable {

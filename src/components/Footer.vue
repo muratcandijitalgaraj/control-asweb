@@ -50,14 +50,14 @@ export default {};
   /* margin: 0; */
 }
 .container {
-  width: 65%;
+  width: auto;
   height: auto;
   align-self: flex-end;
-  /* border: 10px solid black; */
 }
 .flexContainer {
   /* display: flex;
   flex-direction: column; */
+  width: auto;
 }
 .logoPart {
   display: flex;
@@ -65,6 +65,7 @@ export default {};
   justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: 1px solid #f4f4f4;
+  width: auto;
   /* border: 1px solid black; */
 }
 .leftPart {
@@ -180,7 +181,7 @@ export default {};
     width: 446px;
   }
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 770px) {
   .footerComponent {
     /* margin-top: 5rem; */
     /* max-width: 90%; */
@@ -190,8 +191,6 @@ export default {};
     position: relative;
     right: 1.5rem;
   }
-}
-@media only screen and (max-width: 666px) {
   .leftPart {
     display: flex;
     flex-direction: column;
@@ -199,6 +198,14 @@ export default {};
     align-items: center;
   }
 }
+/* @media only screen and (max-width: 666px) {
+  .leftPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+} */
 @media only screen and (max-width: 550px) {
   .footerPara {
     width: auto;
