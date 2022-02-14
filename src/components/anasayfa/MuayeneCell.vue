@@ -1,50 +1,88 @@
 <template>
   <div class="tallCell">
-    <div class="rightPart">
-      <div class="top">
-        <div class="boxes box1">
-          <div class="boxTitle orangeTitle">20 OCAK 2021 - 12:30</div>
+    <div class="logoBox">
+      <img src="../../assets/anasayfa/odeme.svg" alt="" class="logo" />
+    </div>
+    <b-row class="d-flex justify-content-around cell no-gutters">
+      <b-col cols="12" lg="6" xl="3" class="container">
+        <div class="boxes">
+          <div class="boxTitle redTitle">20 OCAK 2021 - 12:30</div>
           <div class="boxPara">Ataşehir Tıp Merkezi</div>
-        </div>
-        <div class="boxes box2">
+        </div></b-col
+      >
+      <b-col cols="12" lg="6" xl="4" class="container">
+        <div class="boxContainer">
           <img src="../../assets/anasayfa/doktor.svg" alt="" class="doktor" />
           <!-- flex column -->
-          <div class="textGroup">
+          <div class="boxes">
             <div class="boxTitle">Prof. Dr. Mehmet Ali Tahaoğlu</div>
             <div class="boxPara">Gögüs Hastalıkları</div>
           </div>
-        </div>
-        <div class="boxes box3">
+        </div></b-col
+      >
+      <b-col cols="12" lg="12" xl="4" class="container">
+        <div class="boxContainer">
           <div class="icons">
-            <img src="../../assets/anasayfa/lab.svg" alt="" class="icon" />
-            <img
-              src="../../assets/anasayfa/radyoloji.svg"
-              alt=""
-              class="icon"
-            />
-            <img src="../../assets/anasayfa/patoloji.svg" alt="" class="icon" />
-            <img src="../../assets/anasayfa/recete.svg" alt="" class="icon" />
+            <div class="iconGroup">
+              <img src="../../assets/anasayfa/lab.svg" alt="" class="icon" />
+              <div class="iconPara">Lab</div>
+            </div>
+            <div class="iconGroup">
+              <img
+                src="../../assets/anasayfa/radyoloji.svg"
+                alt=""
+                class="icon"
+              />
+              <div class="iconPara">Radyoloji</div>
+            </div>
+            <div class="iconGroup">
+              <img
+                src="../../assets/anasayfa/patoloji.svg"
+                alt=""
+                class="icon"
+              />
+              <div class="iconPara">Patoloji</div>
+            </div>
+            <div class="iconGroup">
+              <img src="../../assets/anasayfa/recete.svg" alt="" class="icon" />
+              <div class="iconPara">Reçete</div>
+            </div>
           </div>
-        </div>
-      </div>
+        </div></b-col
+      >
       <div class="greyLine"></div>
-      <div class="bottom">
-        <!-- flex row -->
-        <div class="bottomPara">
-          <div class="paraItem">
-            <img src="../../assets/anasayfa/star.svg" alt="" class="icon" />
-            <div class="paraText">Puan Ver</div>
-          </div>
-          <div class="paraItem">
-            <img src="../../assets/anasayfa/story.svg" alt="" class="icon" />
-            <div class="paraText">Ankete Katıl</div>
-          </div>
-        </div>
-        <button class="bottomButton">
-          <div class="buttonPara">Randevu Alın</div>
-        </button>
-      </div>
-    </div>
+      <b-row class="bottomPart">
+        <b-col cols="12" md="6" class="bottomPara d-flex justify-content-start">
+          <b-row class="bottomParaRow">
+            <b-col cols="12" md="6" lg="6" class="paraItemContainer">
+              <div class="paraItem">
+                <img
+                  src="../../assets/anasayfa/star.svg"
+                  alt=""
+                  class="paraIcon"
+                />
+                <div class="paraItemText">Puan Ver</div>
+              </div>
+            </b-col>
+            <b-col cols="12" md="6" class="paraItemContainer">
+              <div class="paraItem">
+                <img
+                  src="../../assets/anasayfa/story.svg"
+                  alt=""
+                  class="paraIcon"
+                />
+                <div class="paraItemText">Ankete Katıl</div>
+              </div>
+            </b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="12" md="6" class="bottomButton d-flex justify-content-end"
+          ><button class="btn">
+            <p class="buttonPara">Randevu Alın</p>
+          </button></b-col
+        >
+      </b-row>
+    </b-row>
   </div>
 </template>
 
@@ -54,80 +92,66 @@ export default {};
 
 <style scoped>
 .tallCell {
-  height: auto;
-  width: auto;
+  display: flex;
+  margin-left: 12px;
   background: #ffffff;
-  margin-left: 30px;
-  margin-right: 30px;
+  /* Boxx Shadow */
   box-shadow: 0px 1px 3px rgba(42, 49, 55, 0.11);
   border-radius: 10px;
-  display: flex;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: auto;
 }
 .greyLine {
-  width: 80%;
   height: 1px;
-  background: #f3f3f3;
-
-  /* margin-top: 30px;
-  margin-bottom: 25px; */
+  width: 90%;
+  background: #dae9f1;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
-
-.rightPart {
+.cell {
+  padding: 1rem;
+  min-height: 180px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-.top {
-  width: 100%;
+.container {
+  height: 100px;
   height: auto;
+  padding: 0;
+  margin: 0;
+}
+/* the following 2 are not visible. Kept them so that the layout wouldn't shift */
+.logoBox {
+  width: 40px;
+  height: 170px;
+  background: #fff9f0;
+  border-radius: 5px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  margin-top: 30px;
-  padding-left: 20px;
-  padding-right: 30px;
+  padding: 0;
+  margin-right: 20px;
+  align-self: center;
+  margin-left: 5px;
+  opacity: 0;
+}
+.logo {
+  height: 20px;
+  width: 20px;
+  /* margin-left: 1rem; */
+  border-radius: 0px;
+  margin: 0;
 }
 .boxes {
-  height: auto;
-  width: auto;
-  margin-right: 2rem;
-}
-.box1 {
-  width: 171px;
-}
-.box2 {
-  width: 292px;
-  display: flex;
-}
-.box3 {
-  /* border: 1px solid black; */
-  display: flex;
-  /* justify-content: center; */
-}
-
-.redTitle {
-  /* Kırmızı */
-  color: #ea5455;
-}
-.doktor {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
-}
-.textGroup {
   display: flex;
   flex-direction: column;
-}
-.greyLogo {
-  width: 22px;
-  height: 22px;
-  margin-right: 1rem;
+  justify-content: center;
+  align-items: flex-start;
 }
 .boxTitle {
   width: auto;
-  height: 24px;
+  height: auto;
 
   /* baslik4 */
 
@@ -138,53 +162,69 @@ export default {};
   line-height: 150%;
   /* identical to box height, or 24px */
 }
-.boxPara {
-  /* text3 */
-
+.greyTitle {
   font-family: Nunito Sans;
   font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 140%;
-  /* identical to box height, or 21px */
-
-  letter-spacing: -0.01em;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
 
   /* Primary */
 
   color: #3c4e69;
 }
-.orangeTitle {
+.boxPara {
+  width: auto;
+  height: 21px;
+  /* text3 */
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 140%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.01em;
+  /* Primary */
+  color: #3c4e69;
+}
+.redTitle {
   /* Kırmızı */
-  color: #ff8038;
+  color: #ea5455;
 }
-.greyTitle {
-  width: 148px;
-  height: 48px;
-}
-
-.bottom {
+.boxContainer {
   display: flex;
-  justify-content: space-between;
+  width: auto;
+  justify-content: flex-end;
   align-items: center;
-  flex-wrap: wrap;
-  /* height: auto; */
-  padding-left: 20px;
-  padding-right: 50px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-
-  /* border: 2px solid black; */
+  min-height: auto;
+  height: 100%;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+.doktor {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+.greyBox {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f8fb;
+  border-radius: 5px;
+  margin-right: 15px;
+  /* this padding makes sure that the logo fits well */
+  padding: 10px;
+}
+.greyLogo {
+  width: 22px;
+  height: 22px;
+  margin-right: 1rem;
 }
 .bottomPara {
-  width: auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* text3 */
-
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: normal;
@@ -193,23 +233,18 @@ export default {};
   /* identical to box height, or 21px */
 
   letter-spacing: -0.01em;
+  /* Gri */
 
   color: #818b9a;
+  padding: 0;
 }
-.paraItem {
-  width: auto;
-  height: auto;
-  margin-right: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.paraText {
-  width: auto;
-  height: auto;
-  margin-left: 8px;
+.bottomPart {
+  padding: 0;
+  margin: 0;
 }
 .bottomButton {
+}
+.btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -222,15 +257,11 @@ export default {};
   /* Button Primary */
 
   background: #ff7c32;
-  border: none;
   border-radius: 6px;
 }
 .buttonPara {
-  width: auto;
-  height: 17px;
-
   /* buton-text-kucuk */
-
+  width: auto;
   font-family: Nunito Sans;
   font-style: normal;
   font-weight: bold;
@@ -254,29 +285,124 @@ export default {};
   margin: 0px 10px;
 }
 .icons {
-  /* border: 1px solid black; */
-  width: 224px;
-  height: 43px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+}
+.iconGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: auto;
+  height: auto;
 }
 .icon {
-  width: 20px;
-  height: 20px;
+  width: auto;
+  height: 18px;
+  /* Primary */
+  margin-bottom: 8px;
 }
-@media only screen and (max-width: 1250px) {
+.iconPara {
+  width: auto;
+  height: auto;
+
+  /* text4 */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 130%;
+  /* identical to box height, or 17px */
+
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  /* Primary */
+
+  color: #3c4e69;
+}
+.bottomParaRow {
+  padding: 0;
+  margin: 0;
+  padding-left: 12px;
+}
+.paraItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: center;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.paraItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  width: auto;
+  height: auto;
+}
+.paraIcon {
+  width: 22px;
+  height: 22px;
+}
+.paraItemText {
+  width: auto;
+  height: 21px;
+  /* text3 */
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 140%;
+  /* identical to box height, or 21px */
+  letter-spacing: -0.01em;
+  /* Gri */
+  color: #818b9a;
+}
+
+@media (max-width: 1200px) {
   .tallCell {
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .boxContainer {
     align-items: center;
-    flex-wrap: wrap;
   }
-  .bottom {
-    flex-direction: column;
+  .boxes {
+    /* align-items: center; */
   }
-  .bottomPara {
-    margin-bottom: 10px;
+  .logoBox {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 1450px) {
+  .bottomButton {
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 780px) {
+  .bottomButton {
+  }
+  .paraItemContainer {
+    justify-content: center;
+  }
+  .btn {
+    width: 100%;
   }
 }
 </style>

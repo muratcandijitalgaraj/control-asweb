@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Cell from "./RandevuCell.vue";
-import TallCell from "./TallCell.vue";
+import Cell from "./Cell.vue";
+import TallCell from "./TallCell-old.vue";
 import MuayeneCell from "./MuayeneCell.vue";
 
 export default { components: { Cell, TallCell, MuayeneCell } };

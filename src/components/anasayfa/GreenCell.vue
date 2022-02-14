@@ -1,7 +1,7 @@
 <template>
-  <div class="tallCell">
+  <div class="greenCell">
     <div class="logoBox">
-      <img src="../../assets/anasayfa/odeme.svg" alt="" class="logo" />
+      <img src="../../assets/anasayfa/tamamlandi.svg" alt="" class="logo" />
     </div>
     <b-row class="d-flex justify-content-around cell no-gutters">
       <!-- <b-col cols="12" lg="1" xl="1" md="12" class="container no-gutters mx-0">
@@ -11,7 +11,7 @@
       </b-col> -->
       <b-col cols="12" lg="6" xl="3" class="container">
         <div class="boxes">
-          <div class="boxTitle redTitle">Ödeme Bekleniyor</div>
+          <div class="boxTitle redTitle">Görüşme Tamamlandı</div>
           <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
         </div></b-col
       >
@@ -29,7 +29,7 @@
         <div class="boxContainer">
           <div class="greyBox">
             <img
-              src="../../assets/anasayfa/video.svg"
+              src="../../assets/anasayfa/hospital.svg"
               alt=""
               class="greyLogo"
             />
@@ -39,17 +39,6 @@
           </div>
         </div></b-col
       >
-      <div class="greyLine"></div>
-      <b-row class="bottomPart">
-        <b-col cols="12" md="6" class="bottomPara d-flex justify-content-start"
-          >Ödemenizi yaptığınızda randevunuz aktif hale gelecektir.</b-col
-        >
-        <b-col cols="12" md="6" class="bottomButton d-flex justify-content-end"
-          ><button class="btn">
-            <p class="buttonPara">241 Tl Ödeme Yapın</p>
-          </button></b-col
-        >
-      </b-row>
     </b-row>
   </div>
 </template>
@@ -59,7 +48,7 @@ export default {};
 </script>
 
 <style scoped>
-.tallCell {
+.greenCell {
   display: flex;
   margin-left: 12px;
   background: #ffffff;
@@ -70,16 +59,9 @@ export default {};
   margin-top: 20px;
   height: auto;
 }
-.greyLine {
-  height: 1px;
-  width: 90%;
-  background: #dae9f1;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
 .cell {
   padding: 1rem;
-  min-height: 180px;
+  min-height: 110px;
   display: flex;
 }
 .container {
@@ -90,8 +72,8 @@ export default {};
 }
 .logoBox {
   width: 40px;
-  height: 170px;
-  background: #fff9f0;
+  height: 100px;
+  background: #e0fff0;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
@@ -99,6 +81,7 @@ export default {};
   align-items: center;
   padding: 0;
   margin-right: 20px;
+
   align-self: center;
   margin-left: 5px;
 }
@@ -190,69 +173,9 @@ export default {};
   height: 22px;
   margin-right: 1rem;
 }
-.bottomPara {
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 140%;
-  /* identical to box height, or 21px */
 
-  letter-spacing: -0.01em;
-
-  /* Gri */
-
-  color: #818b9a;
-  padding: 0;
-}
-.bottomPart {
-  padding: 0;
-  margin: 0;
-}
-.bottomButton {
-}
-.btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px 20px 11px;
-
-  width: 250px;
-  height: 40px;
-
-  /* Button Primary */
-
-  background: #ff7c32;
-  border-radius: 6px;
-}
-.buttonPara {
-  /* buton-text-kucuk */
-  width: auto;
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 15px;
-  line-height: 110%;
-  /* identical to box height, or 17px */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  /* Beyaz */
-
-  color: #ffffff;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 10px;
-}
 @media (max-width: 1200px) {
-  .tallCell {
+  .greenCell {
     flex-direction: column;
   }
 
@@ -272,12 +195,6 @@ export default {};
 @media (max-width: 1000px) {
   .container {
     margin-left: 1rem;
-  }
-}
-
-@media (min-width: 1450px) {
-  .bottomButton {
-    padding-right: 3rem;
   }
 }
 </style>

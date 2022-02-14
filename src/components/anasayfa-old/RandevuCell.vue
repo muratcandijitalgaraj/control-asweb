@@ -1,6 +1,6 @@
 <template>
   <div class="cell">
-    <div class="firstBox hideOnTablet">
+    <div class="firstBox showOnDesktop">
       <div class="logoBox">
         <img src="../../assets/anasayfa/gorusme.svg" alt="" class="logo" />
       </div>
@@ -9,13 +9,16 @@
         <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
       </div>
     </div>
-    <div class="logoBox hideOnDesktop">
-      <img src="../../assets/anasayfa/gorusme.svg" alt="" class="logo" />
+    <div class="showOnTablet">
+      <div class="logoBox">
+        <img src="../../assets/anasayfa/gorusme.svg" alt="" class="logo" />
+      </div>
+      <div class="boxes box1">
+        <div class="boxTitle redTitle">Görüşme Bekleniyor</div>
+        <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
+      </div>
     </div>
-    <div class="boxes box1 hideOnDesktop">
-      <div class="boxTitle redTitle">Görüşme Bekleniyor</div>
-      <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
-    </div>
+
     <!-- flex row -->
     <div class="boxes box2">
       <img src="../../assets/anasayfa/doktor.svg" alt="" class="doktor" />
@@ -161,22 +164,31 @@ export default {};
 .firstBox {
   display: flex;
 }
-.hideOnDesktop {
+.showOnTablet {
   display: none;
 }
-.hideOnTablet {
-  display: block;
+.showOnDesktop {
+  /* display: block; */
   width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media only screen and (max-width: 1250px) {
-  .hideOnTablet {
+  .cell {
+    justify-content: center;
+  }
+  .showOnDesktop {
     display: none;
   }
-  .hideOnDesktop {
-    display: block;
+  .showOnTablet {
+    /* display: block; */
+    /* height: auto;
+    width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .cell {
     height: auto;
@@ -188,15 +200,19 @@ export default {};
     margin-bottom: 1rem;
   }
   .logoBox {
-    width: 80%;
-    height: 2rem;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  .redTitle {
+  }
   .box1 {
+    margin-top: 1rem;
   }
   .logo {
+    margin: 0;
   }
 }
 </style>

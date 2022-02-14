@@ -1,45 +1,75 @@
 <template>
-  <div class="anasayfa">
-    <Header />
-    <!-- <img src="../assets/anasayfa/bulutlar.svg" alt="" class="bulutlar" /> -->
-    <div class="zemin">
-      <div class="zeminRow">
-        <div id="sideBarLeft">
-          <SideBarLeft />
-        </div>
-        <div id="sideBarTop">
+  <div class="anasayfaComponent">
+    <b-container class="anasayfa">
+      <b-row class="header">
+        <Header />
+      </b-row>
+      <!-- <img src="../assets/anasayfa/bulutlar.svg" alt="" class="bulutlar" /> -->
+      <b-row class="sideBarTopRow">
+        <!-- <b-col cols="3" class="sideBar"><SideBar /></b-col> -->
+        <b-col class="sideBarTop">
           <SideBarTop />
-        </div>
-        <div class="rightPart">
-          <Cards />
-          <Randevularim />
-        </div>
-      </div>
-      <div class="footerContainer">
-        <Footer />
-      </div>
-    </div>
+        </b-col>
+      </b-row>
+      <b-row class="greyPart">
+        <b-col cols="3" class="sideBar"><SideBar /></b-col>
+
+        <b-col class="rightPart">
+          <b-row class="cards">
+            <b-col><Cards /></b-col>
+          </b-row>
+          <b-row class="texts">
+            <b-col class="title">Randevularınız</b-col>
+            <b-col class="para">Hepsini Göster </b-col>
+          </b-row>
+
+          <b-row class="randevular">
+            <b-col>
+              <Randevulariniz />
+            </b-col>
+          </b-row>
+          <b-row class="texts">
+            <b-col class="title">Son Muayeneler</b-col>
+            <b-col class="para">Hepsini Göster </b-col>
+          </b-row>
+          <b-row class="muayeneler">
+            <b-col>
+              <Muayeneler />
+            </b-col>
+          </b-row>
+        </b-col>
+      </b-row>
+      <b-row class="footer"> footer </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
 import Header from "../components/anasayfa/Header.vue";
-import SideBarLeft from "../components/anasayfa/SideBarLeft.vue";
-import SideBarTop from "../components/anasayfa/SideBarTop.vue";
+import SideBar from "../components/anasayfa/SideBar.vue";
+import SideBarTop from "../components/anasayfa-old/SideBarTop.vue";
+
 import Cards from "../components/anasayfa/Cards.vue";
-import Randevularim from "../components/anasayfa/Randevularim.vue";
-import Footer from "../components/Footer.vue";
+import Randevulariniz from "../components/anasayfa/Randevulariniz.vue";
+import Muayeneler from "../components/anasayfa/Muayeneler.vue";
 
 export default {
-  components: { Header, SideBarLeft, SideBarTop, Cards, Randevularim, Footer },
+  components: {
+    Header,
+    SideBar,
+    SideBarTop,
+    Cards,
+    Randevulariniz,
+    Muayeneler,
+  },
 };
 </script>
 
 <style scoped>
-.anasayfa {
-  overflow-x: hidden;
+.anasayfaComponent {
   width: 100%;
-  height: 100%;
+  height: auto;
 
   /* Secondary */
 
@@ -53,6 +83,80 @@ export default {
   margin: 0;
   padding: 0;
 }
+.anasayfa {
+  height: 100%;
+  width: 100%;
+}
+.header {
+  width: auto;
+  height: auto;
+  background: #32a5df;
+  margin-bottom: 25px;
+}
+.cards {
+  min-height: 140px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.randevular {
+  height: auto;
+}
+.muayeneler {
+  height: auto;
+}
+.texts {
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  /* padding-left: 1rem;
+  padding-right: 2rem; */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.title {
+  width: auto;
+  height: auto;
+
+  /* baslik3 */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 130%;
+  /* identical to box height, or 29px */
+
+  /* Secondary */
+
+  color: #32a5df;
+}
+.para {
+  width: auto;
+  height: auto;
+
+  /* text4-bold */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 130%;
+  /* identical to box height, or 17px */
+
+  letter-spacing: -0.01em;
+
+  /* Gri */
+
+  color: #818b9a;
+}
+.footer {
+  height: 200px;
+  width: auto;
+  border: 5px solid black;
+}
 
 /* .bulutlar {
   margin-top: 10rem;
@@ -61,64 +165,40 @@ export default {
   height: auto;
   width: 100%;
 } */
-.zemin {
-  margin-top: 27px;
-  /* zemin */
-  /* border: 2px solid red; */
-  width: auto;
+.container {
+}
+.greyPart {
+  min-height: 1018px;
   height: 100%;
-
+  width: auto;
   background: #f2f8fb;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  /* margin-bottom: 5px; */
-  display: flex;
-  flex-direction: column;
 }
-.zeminRow {
-  /* margin-top: 27px; */
-  /* zemin */
-  width: auto;
-  height: 100%;
-
-  background: #f2f8fb;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
-  border-radius: 18px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  /* margin-bottom: 5px; */
-  display: flex;
-}
-#sideBarLeft {
-  width: auto;
-  height: 100%;
-}
-#sideBarTop {
-  display: none;
+.sideBar {
+  background: #f9fdff;
+  border-radius: 18px 0px 0px 18px;
+  height: auto;
 }
 .rightPart {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.footerContainer {
   height: auto;
-  width: auto;
-  /* border: 2px solid black; */
 }
-/* @media only screen and (min-width: 1500px) {
-  .zemin {
-    width: 75%;
-  }
-} */
+
+.sideBarTop {
+  display: none;
+}
+.sideBarTopRow {
+  /* border: 2px solid red; */
+}
 @media only screen and (max-width: 1250px) {
-  #sideBarLeft {
+  .sideBar {
     display: none;
   }
-  #sideBarTop {
+  .sideBarTop {
     display: block;
+    /* border: solid; */
+    width: 100%;
+    padding: 0;
   }
   .zeminRow {
     width: auto;
@@ -131,12 +211,18 @@ export default {
     flex-direction: column;
   }
 }
-@media only screen and (max-width: 750px) {
-  .zeminRow {
-    width: auto;
+@media (max-width: 576px) {
+  .texts {
+    flex-direction: column;
+    align-items: center;
   }
-  .footerContainer {
-    width: auto;
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 576px) {
+  .para {
+    text-align: right;
   }
 }
 </style>
