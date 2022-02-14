@@ -188,9 +188,9 @@ export default {
   display: none;
 }
 .sideBarTopRow {
-  /* border: 2px solid red; */
+  width: auto;
 }
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 992px) {
   .sideBar {
     display: none;
   }
@@ -200,15 +200,8 @@ export default {
     width: 100%;
     padding: 0;
   }
-  .zeminRow {
-    width: auto;
-
-    height: auto;
-    flex-direction: column;
-  }
-  .rightPart {
-    display: flex;
-    flex-direction: column;
+  .greyPart {
+    border-radius: 0px;
   }
 }
 @media (max-width: 576px) {
