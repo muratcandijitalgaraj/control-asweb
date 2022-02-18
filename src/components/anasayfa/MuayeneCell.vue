@@ -1,16 +1,16 @@
 <template>
   <div class="tallCell">
-    <div class="logoBox">
+    <!-- <div class="logoBox">
       <img src="../../assets/anasayfa/odeme.svg" alt="" class="logo" />
-    </div>
+    </div> -->
     <b-row class="d-flex justify-content-around cell no-gutters">
-      <b-col cols="12" lg="6" xl="3" class="container">
+      <b-col cols="12" lg="6" xl="4" class="container firstBox">
         <div class="boxes">
           <div class="boxTitle redTitle">20 OCAK 2021 - 12:30</div>
           <div class="boxPara">Ataşehir Tıp Merkezi</div>
         </div></b-col
       >
-      <b-col cols="12" lg="6" xl="4" class="container">
+      <b-col cols="12" lg="6" xl="4" class="container doktorContainer">
         <div class="boxContainer">
           <img src="../../assets/anasayfa/doktor.svg" alt="" class="doktor" />
           <!-- flex column -->
@@ -59,7 +59,7 @@
                 <img
                   src="../../assets/anasayfa/star.svg"
                   alt=""
-                  class="paraIcon"
+                  class="paraIcon icon"
                 />
                 <div class="paraItemText">Puan Ver</div>
               </div>
@@ -69,7 +69,7 @@
                 <img
                   src="../../assets/anasayfa/story.svg"
                   alt=""
-                  class="paraIcon"
+                  class="paraIcon icon"
                 />
                 <div class="paraItemText">Ankete Katıl</div>
               </div>
@@ -104,7 +104,7 @@ export default {};
 }
 .greyLine {
   height: 1px;
-  width: 90%;
+  width: 95%;
   background: #dae9f1;
   margin-top: 20px;
   margin-bottom: 15px;
@@ -148,6 +148,12 @@ export default {};
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+.firstBox {
+  padding-left: 20px;
+}
+.doktorContainer {
+  padding-left: 1rem;
 }
 .boxTitle {
   width: auto;
@@ -243,6 +249,9 @@ export default {};
   margin: 0;
 }
 .bottomButton {
+  /* border: solid; */
+  padding: 0;
+  padding-right: 1.4rem;
 }
 .btn {
   display: flex;
@@ -327,7 +336,7 @@ export default {};
 .bottomParaRow {
   padding: 0;
   margin: 0;
-  padding-left: 12px;
+  padding-left: 2.5rem;
 }
 .paraItemContainer {
   display: flex;
@@ -350,6 +359,7 @@ export default {};
 .paraIcon {
   width: 22px;
   height: 22px;
+  margin-right: 8px;
 }
 .paraItemText {
   width: auto;
@@ -383,6 +393,9 @@ export default {};
     padding: 10px;
     margin: 0;
   }
+  .bottomParaRow {
+    padding-left: 2rem;
+  }
 }
 @media (max-width: 1000px) {
   .container {
@@ -391,12 +404,15 @@ export default {};
 }
 
 @media (min-width: 1400px) {
-  .bottomButton {
+  /* .bottomButton {
     padding-right: 3rem;
-  }
+  } */
 }
 @media (max-width: 780px) {
   .bottomButton {
+    padding: 0;
+    /* this one makes the button look like as if it was centered in the cell */
+    padding-left: 1.3rem;
   }
   .paraItemContainer {
     justify-content: center;

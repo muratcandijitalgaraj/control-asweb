@@ -542,6 +542,7 @@ input::placeholder {
   /* Gri */
   color: #818b9a;
   margin-right: 20px;
+  padding-left: 1.3rem;
 }
 
 .tcNo {

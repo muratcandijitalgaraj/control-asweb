@@ -10,13 +10,13 @@
         </div>
       </b-col> -->
       <b-col cols="12" lg="6" xl="3" class="container">
-        <div class="boxes">
+        <div class="boxes firstBox">
           <div class="boxTitle redTitle">Görüşme Bekleniyor</div>
           <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
         </div></b-col
       >
       <b-col cols="12" lg="6" xl="4" class="container">
-        <div class="boxContainer">
+        <div class="boxContainer doktorContainer">
           <img src="../../assets/anasayfa/doktor.svg" alt="" class="doktor" />
           <!-- flex column -->
           <div class="boxes">
@@ -186,6 +186,12 @@ export default {};
   .boxes {
     /* align-items: center; */
   }
+  .firstBox {
+    padding-left: 1rem;
+  }
+  .greyBox {
+    margin-left: 1rem;
+  }
   .logoBox {
     width: 100%;
     height: auto;
@@ -195,6 +201,9 @@ export default {};
 }
 @media (max-width: 1000px) {
   .container {
+    margin-left: 1rem;
+  }
+  .doktorContainer {
     margin-left: 1rem;
   }
 }

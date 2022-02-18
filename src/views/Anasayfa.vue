@@ -1,10 +1,11 @@
 <template>
   <div class="anasayfaComponent">
+    <img src="../assets/anasayfa/bulutlar.svg" alt="" class="bulutlar" />
+
     <b-container class="anasayfa">
       <b-row class="header">
         <Header />
       </b-row>
-      <!-- <img src="../assets/anasayfa/bulutlar.svg" alt="" class="bulutlar" /> -->
       <b-row class="sideBarTopRow">
         <!-- <b-col cols="3" class="sideBar"><SideBar /></b-col> -->
         <b-col class="sideBarTop">
@@ -48,7 +49,7 @@
 /* eslint-disable vue/no-unused-components */
 import Header from "../components/anasayfa/Header.vue";
 import SideBar from "../components/anasayfa/SideBar.vue";
-import SideBarTop from "../components/anasayfa-old/SideBarTop.vue";
+import SideBarTop from "../components/anasayfa/SideBarTop.vue";
 
 import Cards from "../components/anasayfa/Cards.vue";
 import Randevulariniz from "../components/anasayfa/Randevulariniz.vue";
@@ -72,7 +73,6 @@ export default {
 .anasayfaComponent {
   width: 100%;
   height: auto;
-
   /* Secondary */
 
   background: #32a5df;
@@ -84,10 +84,21 @@ export default {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  z-index: -55;
+}
+.bulutlar {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 7rem;
+  z-index: 44;
 }
 .anasayfa {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 60;
 }
 .header {
   width: auto;
@@ -175,6 +186,8 @@ export default {
   background: #f2f8fb;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
   border-radius: 18px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .sideBar {
   background: #f9fdff;
@@ -210,6 +223,9 @@ export default {
   }
   .greyPart {
     border-radius: 0px;
+  }
+  .bulutlar {
+    top: 12rem;
   }
 }
 @media (max-width: 576px) {

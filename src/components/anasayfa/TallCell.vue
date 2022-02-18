@@ -10,13 +10,13 @@
         </div>
       </b-col> -->
       <b-col cols="12" lg="6" xl="3" class="container">
-        <div class="boxes">
+        <div class="boxes firstBox">
           <div class="boxTitle redTitle">Ödeme Bekleniyor</div>
           <div class="boxPara">20 Ocak Pazartesi - 12:30</div>
         </div></b-col
       >
       <b-col cols="12" lg="6" xl="4" class="container">
-        <div class="boxContainer">
+        <div class="boxContainer doktorContainer">
           <img src="../../assets/anasayfa/doktor.svg" alt="" class="doktor" />
           <!-- flex column -->
           <div class="boxes">
@@ -72,7 +72,7 @@ export default {};
 }
 .greyLine {
   height: 1px;
-  width: 90%;
+  width: 95%;
   background: #dae9f1;
   margin-top: 20px;
   margin-bottom: 15px;
@@ -203,7 +203,7 @@ export default {};
   /* Gri */
 
   color: #818b9a;
-  padding: 0;
+  padding-left: 1.2rem;
 }
 .bottomPart {
   padding: 0;
@@ -262,6 +262,12 @@ export default {};
   .boxes {
     /* align-items: center; */
   }
+  .firstBox {
+    padding-left: 1rem;
+  }
+  .greyBox {
+    margin-left: 1rem;
+  }
   .logoBox {
     width: 100%;
     height: auto;
@@ -273,11 +279,28 @@ export default {};
   .container {
     margin-left: 1rem;
   }
+  .doktorContainer {
+    margin-left: 1rem;
+  }
 }
 
 @media (min-width: 1400px) {
   .bottomButton {
     padding-right: 3rem;
+  }
+}
+@media (max-width: 780px) {
+  .bottomButton {
+    padding: 0;
+    /* this one makes the button look like as if it was centered in the cell */
+    padding-left: 1.3rem;
+  }
+  .bottomPara {
+    justify-content: center !important;
+  }
+  .btn {
+    width: 100%;
+    margin-top: 12px;
   }
 }
 </style>
