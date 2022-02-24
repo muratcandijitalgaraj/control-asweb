@@ -1,7 +1,7 @@
 <template>
   <div class="bulutlarPart">
-    <img src="../assets/giris/sol-bulut.svg" alt="" class="sol-bulut" />
-    <img src="../assets/giris/sag-bulut.svg" alt="" class="sag-bulut" />
+    <img src="../../assets/giris/sol-bulut.svg" alt="" class="sol-bulut" />
+    <img src="../../assets/giris/sag-bulut.svg" alt="" class="sag-bulut" />
   </div>
 </template>
 

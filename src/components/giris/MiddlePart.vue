@@ -7,55 +7,128 @@
         <div class="telContainer">
           <input placeholder="+90" type="text" class="countryCode" />
           <div class="telefonNoContainer">
-            <input placeholder="Telefon Numaranız" type="text" class="telNo" />
+            <input
+              v-model="telNo"
+              placeholder="Telefon Numaranız"
+              type="number"
+              class="telNo"
+            />
             <span v-bind:class="{ active: isActive }" class="errorMessage"
               >Geçerli bir telefon numarası yazın</span
             >
           </div>
         </div>
-        <div class="sifreContainer">
-          <input placeholder="Şifreniz" type="text" class="sifre" />
-          <span v-bind:class="{ active: isActive }" class="errorMessage"
-            >Hatalı şifre girdiniz</span
-          >
-        </div>
-        <div class="loginActions">
-          <div class="checkboxContainer">
-            <div
-              v-bind:class="{ checked: isChecked }"
-              @click="handleCheck"
-              class="unChecked"
+        <input
+          v-if="userTelNoCorrect"
+          placeholder="Sms Kodunu Giriniz"
+          type="text"
+          class="input"
+          v-model="smsCode"
+        />
+
+        <div v-if="accountBelongsToUser" class="sifrePart">
+          <div class="sifreContainer">
+            <input placeholder="Şifreniz" type="password" class="sifre" />
+            <span v-bind:class="{ active: isActive }" class="errorMessage"
+              >Hatalı şifre girdiniz</span
             >
-              <img
-                src="../assets/giris/checkImg.svg"
-                alt=""
-                class="checkboxImg"
-              />
-            </div>
-            <div @click="handleCheck" class="checkboxPara">Beni Hatırla</div>
           </div>
-          <div class="forgotContainer">
-            <img
-              src="../assets/giris/flash-circle-1.svg"
-              alt=""
-              class="forgotLogo"
-            />
-            <div class="forgotPara">Şifremi Unuttum</div>
+          <div class="loginActions">
+            <div class="checkboxContainer">
+              <div
+                v-bind:class="{ checked: isChecked }"
+                @click="handleCheck"
+                class="unChecked"
+              >
+                <img
+                  src="../../assets/giris/checkImg.svg"
+                  alt=""
+                  class="checkboxImg"
+                />
+              </div>
+              <div @click="handleCheck" class="checkboxPara">Beni Hatırla</div>
+            </div>
+            <div class="forgotContainer">
+              <img
+                src="../../assets/giris/flash-circle-1.svg"
+                alt=""
+                class="forgotLogo"
+              />
+              <div class="forgotPara">Şifremi Unuttum</div>
+            </div>
           </div>
         </div>
-        <button @click="showError" class="tamamButton">Tamam</button>
+        <!-- first button -->
+        <!-- show this button only if the user tel no is NOT correct -->
+        <button
+          v-if="!userTelNoCorrect"
+          @click="firstButtonControl"
+          class="tamamButton"
+        >
+          Tamam
+        </button>
+        <!-- second button -->
+        <!-- show this button once the user's tel no is correct -->
+        <button
+          v-if="userTelNoCorrect"
+          @click="secondButtonControl"
+          class="tamamButton"
+        >
+          Tamam
+        </button>
       </form>
       <div class="bulutPart">
         <div class="orta-bulut">
-          <!-- carousel will come here -->
-          <!-- <img
-            src="../assets/giris/imageGroup-1.svg"
-            alt=""
-            class="imageGroup"
-          /> -->
           <div class="imageGroup">
             <Carousel />
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary triggerModal"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body modalItemsContainer">
+            <!-- <img src="" alt="" class="modalImage"> -->
+            <div class="modalTitle">Bu Kullanıcı hesabı size mi ait?</div>
+            <div class="modalText">
+              Girmiş olduğunuz 0555 666 77 88 telefon numarası A** Y***** adına
+              kayıtlıdır
+            </div>
+            <button
+              class="positiveBtn"
+              data-bs-dismiss="modal"
+              @click="confirmaccountBelongsToUser"
+            >
+              <div class="modalButtonText">Evet, bu hesap bana ait</div>
+            </button>
+            <button
+              data-bs-dismiss="modal"
+              @click="accountDoesNotBelongToUser"
+              class="negativeBtn"
+            >
+              <div class="modalButtonText">Hayır, hesap bana ait değil</div>
+            </button>
+          </div>
+          <div class="modal-footer"></div>
         </div>
       </div>
     </div>
@@ -70,6 +143,13 @@ export default {
     return {
       isActive: false,
       isChecked: false,
+      accountBelongsToUser: false,
+      userTelNoCorrect: false,
+      //first click/telefon no
+      //let's give +90 as default for country code
+      countryCode: +90,
+      telNo: "",
+      smsCode: "",
     };
   },
   methods: {
@@ -81,6 +161,43 @@ export default {
       // e.preventDefault();
       this.isChecked = !this.isChecked;
       // console.log(this.isChecked);
+    },
+    firstButtonControl: function (e) {
+      e.preventDefault();
+      //if the telNo part does not contain 10 digits
+      if (this.telNo.toString().length != 10) {
+        this.isActive = true;
+      } else if (this.telNo.toString().length == 10) {
+        //if the number seems correct, remove the error message
+        this.isActive = false;
+        //show sms code input section
+        this.userTelNoCorrect = true;
+      }
+    },
+    secondButtonControl: function (e) {
+      e.preventDefault();
+
+      //check if the sms code is correct
+      //at this stage, I'm just using a length
+      //when the API i connected, it'll use a different logic
+      //so if the user does not have an account, direct him/her to the sign-up page
+      if (this.smsCode.toString().length != 4) {
+        // this.$router.push("Kayit");
+        console.log("routing?");
+        this.$router.push({ name: "Kayit" });
+      }
+      //if s/he has an account, open pop-up
+      else if (this.smsCode.toString().length == 4) {
+        document.querySelector(".triggerModal").click();
+      }
+    },
+    confirmaccountBelongsToUser: function (e) {
+      e.preventDefault();
+      this.accountBelongsToUser = true;
+    },
+    accountDoesNotBelongToUser: function (e) {
+      e.preventDefault();
+      this.$router.push({ name: "Kayit" });
     },
   },
 };
@@ -150,16 +267,16 @@ export default {
   color: #32a5df;
   margin-bottom: 35px;
 }
-//there's nesting here
 .telContainer {
   @include flexCenter(row);
-  // margin-bottom: 25px;
-  .telefonNoContainer {
-    margin-bottom: 9px;
-  }
+  width: auto;
+  height: 93px !important;
+}
+.telefonNoContainer {
+  margin-bottom: 9px;
 }
 .countryCode {
-  width: 99.3px;
+  width: 100%;
   height: 60px;
   background: #ffffff;
   /* Form Shadow */
@@ -178,7 +295,7 @@ export default {
   /* Gri */
   color: #818b9a;
   text-align: center;
-  margin-bottom: 27px;
+  margin-bottom: 33px;
 }
 .telNo {
   width: 341px;
@@ -199,16 +316,50 @@ export default {
   letter-spacing: -0.01em;
   /* Gri */
   color: #818b9a;
+  padding-left: 15px;
+  margin-bottom: 0;
 }
-
-.sifre {
-  width: 462px;
+.input {
+  width: 468px;
   height: 60px;
   background: #ffffff;
   /* Form Shadow */
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.03);
   border-radius: 6px;
   border: none;
+  padding: 0;
+  padding-left: 15px;
+
+  /* form-baslik */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+
+  letter-spacing: -0.01em;
+
+  /* Gri */
+
+  color: #818b9a;
+  margin-bottom: 25px;
+}
+.sifreContainer {
+  width: 468px;
+}
+
+.sifre {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  /* Form Shadow */
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.03);
+  border-radius: 6px;
+  border: none;
+  padding: 0;
+  padding-left: 15px;
 
   /* form-baslik */
 
@@ -226,7 +377,7 @@ export default {
   color: #818b9a;
 }
 .loginActions {
-  // border: 1px solid red;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -363,16 +514,111 @@ export default {
   width: 585px;
   height: 211px;
   // border: 1px solid gold;
-  background: url("../assets/giris/orta-bulut.svg");
+  background: url("../../assets/giris/orta-bulut.svg");
   // background: black;
   @include flexCenter(column);
 }
 .imageGroup {
-  width: auto;
+  width: 100%;
   height: auto;
-  overflow: visible;
-  padding-top: 30rem;
+  //what's this overflow visible?
+  // overflow: visible;
+  margin-top: 30rem;
   // margin-bottom: 50px;
+}
+.checkboxImg {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  left: 2.3px;
+  top: 2px;
+}
+.modal-content {
+  width: 470px;
+  height: 571px;
+
+  background: #e9f3f9 !important;
+  border-radius: 16px;
+}
+.triggerModal {
+  display: none;
+}
+.modalItemsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modalTitle {
+  width: 308px;
+  height: 26px;
+
+  /* baslik */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 130%;
+  /* identical to box height, or 26px */
+
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  /* Primary */
+
+  color: #3c4e69;
+  margin-bottom: 14px;
+}
+.modalText {
+  width: 295px;
+  height: 42px;
+
+  /* text02 */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 140%;
+  /* or 21px */
+
+  text-align: center;
+
+  /* Primary */
+
+  color: #3c4e69;
+  margin-bottom: 60px;
+}
+.positiveBtn,
+.negativeBtn {
+  width: 341px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.positiveBtn {
+  background: #ff7c32;
+}
+.negativeBtn {
+  background: #2e95df;
+}
+.modalButtonText {
+  /* buton-text */
+
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 130%;
+  /* identical to box height, or 21px */
+
+  text-align: center;
+
+  /* Beyaz */
+
+  color: #ffffff;
 }
 // tablet starts here
 @media only screen and (max-width: 1200px) {
@@ -454,31 +700,34 @@ export default {
     width: auto;
   }
   .countryCode {
-    width: 100px;
+    width: 80px;
+    margin-bottom: 24px;
   }
   .telefonNoContainer {
-    // border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: auto;
+    width: 200px;
   }
   .telNo {
     width: 100%;
+  }
+  .input {
+    width: 300px;
   }
   .sifreContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
+    width: 300px;
   }
   .sifre {
     width: 100%;
   }
   .tamamButton {
-    width: 100%;
+    width: 300px;
   }
 }
 </style>

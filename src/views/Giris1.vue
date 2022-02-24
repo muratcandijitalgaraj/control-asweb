@@ -11,12 +11,11 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Bulutlar from "../components/Bulutlar.vue";
-import MiddlePart from "../components/MiddlePart.vue";
-import Bottom from "../components/Bottom.vue";
-import Footer from "../components/Footer.vue";
-
+import Header from "../components/shared/Header.vue";
+import Bulutlar from "../components/giris/Bulutlar.vue";
+import MiddlePart from "../components/giris/MiddlePart.vue";
+import Bottom from "../components/shared/Bottom.vue";
+import Footer from "../components/shared/Footer.vue";
 export default { components: { Header, Bulutlar, MiddlePart, Bottom, Footer } };
 </script>
 

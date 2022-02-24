@@ -2,18 +2,18 @@
   <div class="bottomComponent">
     <div class="container">
       <!-- <div class="frame"> -->
-      <img src="../assets/giris/frame.svg" alt="" class="frame" />
+      <img src="../../assets/giris/frame.svg" alt="" class="frame" />
       <!-- </div> -->
       <div class="textGroup">
         <div class="blueText">
           Mobil Uygulamamız ile Anadolu Sağlık hizmetlerine
           <span class="orangeText">her yerden ulaşın</span>
         </div>
-        <img src="../assets/giris/arrow.svg" alt="" class="arrow" />
+        <img src="../../assets/giris/arrow.svg" alt="" class="arrow" />
       </div>
       <div class="buttons">
         <button class="btn">
-          <img src="../assets/giris/apple-logo.svg" alt="" class="btnLogo" />
+          <img src="../../assets/giris/apple-logo.svg" alt="" class="btnLogo" />
           <div class="btnTextContainer">
             <div class="btnParaTop">
               Hemen İndirin <br />
@@ -22,7 +22,11 @@
           </div>
         </button>
         <button class="btn">
-          <img src="../assets/giris/google-logo.svg" alt="" class="btnLogo" />
+          <img
+            src="../../assets/giris/google-logo.svg"
+            alt=""
+            class="btnLogo"
+          />
           <div class="btnTextContainer">
             <div class="btnParaTop">
               Hemen İndirin <br />
@@ -62,7 +66,6 @@ export default {};
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // border: 5px solid black;
 }
 
 .frame {
@@ -73,11 +76,11 @@ export default {};
 .textGroup {
   width: 439px;
   height: 100%;
-  // border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 3rem;
 }
 .arrow {
   position: relative;
@@ -124,6 +127,7 @@ export default {};
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 3rem;
 }
 .btn {
   /* Rectangle 6 */
@@ -141,7 +145,7 @@ export default {};
   margin-right: 30px;
 }
 .btnLogo {
-  width: 24.75px;
+  width: auto;
   height: 30px;
   padding-left: 1rem;
 }
@@ -184,6 +188,7 @@ export default {};
   color: #ffffff;
   /* border: 1px solid black; */
 }
+
 //tablet starts
 @media only screen and (max-width: 1170px) {
   .bottomComponent {
@@ -193,6 +198,7 @@ export default {};
     flex-direction: column;
     position: relative;
     top: 1rem;
+    margin: 0;
   }
   .btn {
     margin-top: 1rem;
@@ -216,9 +222,18 @@ export default {};
   .textGroup {
     // justify-content: center;
     // border: 2px solid red;
-    position: relative;
-    left: 3rem;
+    // position: relative;
+    // left: 3rem;
+    // margin-top: 1rem;
+    width: auto;
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .blueText {
+    width: auto;
+  }
+  .orangeText {
+    width: auto;
   }
   .arrow {
     display: none;

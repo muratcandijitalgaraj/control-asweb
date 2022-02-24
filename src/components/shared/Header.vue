@@ -2,7 +2,7 @@
   <div class="headerComponent">
     <div class="headerContainer">
       <div class="headerLogoPart">
-        <img src="../assets/giris/logo.svg" alt="" class="logo" />
+        <img src="../../assets/giris/logo.svg" alt="" class="logo" />
         <div class="headerIslemler">ONLINE İŞLEMLER</div>
       </div>
       <div class="headerSignupPart">

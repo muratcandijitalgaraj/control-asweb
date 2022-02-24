@@ -1,24 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-
-Vue.use(VueRouter);
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
-  },
   {
     path: "/giris1",
     name: "Giris1",
@@ -29,24 +11,6 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Giris1.vue"),
   },
   {
-    path: "/anasayfa",
-    name: "Anasayfa",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Anasayfa.vue"),
-  },
-  {
-    path: "/carousel",
-    name: "carousel",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../components/Carousel.vue"),
-  },
-  {
     path: "/kayit",
     name: "Kayit",
     // route level code-splitting
@@ -55,11 +19,19 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Kayit.vue"),
   },
+  {
+    path: "/playground",
+    name: "Playground",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Playground.vue"),
+  },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 

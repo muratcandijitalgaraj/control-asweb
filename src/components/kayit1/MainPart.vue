@@ -116,18 +116,19 @@
           </div>
           <input placeholder="İsim" type="text" class="input" />
           <input placeholder="Soyisim" type="text" class="input" />
-          <!-- <input
+          <!--///////// DATE PICKER HERE ///////////////////////////// -->
+          <Datepicker
             placeholder="Doğum Tarihi (GG/AA/YYYY)"
-            type="date"
-            class="input datePicker"
-          /> -->
-          <b-form-datepicker
-            placeholder="Doğum Tarihi (GG/AA/YYYY)"
-            id="example-datepicker"
-            locale="tr"
+            class="picker"
             v-model="date"
-            class="mb-2 datePicker"
-          ></b-form-datepicker>
+            :format="format"
+            autoApply
+            :closeOnAutoApply="false"
+            locale="tr"
+            :autoPosition="false"
+            :startDate="startDate"
+          />
+
           <select class="dropDownSelect" name=" " id=" ">
             <option class="optionValue" value="">Cinsiyet</option>
             <option class="optionValue" value="dog">Erkek</option>
@@ -194,6 +195,7 @@
             <option class="optionValue" value="dog">Dog</option>
             <option class="optionValue" value="cat">Cat</option>
           </select> -->
+
           <input placeholder="Kilo" type="number" min="10" max="1000" />
           <input placeholder="Boy (cm)" type="number" min="10" max="1000" />
 
@@ -219,7 +221,29 @@
 </template>
 
 <script>
+import { ref } from "vue";
+import Datepicker from "vue3-date-time-picker";
+import "vue3-date-time-picker/dist/main.css";
 export default {
+  components: { Datepicker },
+  setup() {
+    const date = ref();
+
+    const format = (date) => {
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+
+      return `${day}/${month}/${year}`;
+    };
+    const startDate = ref(new Date(1985, 1));
+
+    return {
+      date,
+      format,
+      startDate,
+    };
+  },
   data() {
     return {
       one: true,
@@ -231,7 +255,7 @@ export default {
       oneIsOnHold: false,
       isChecked: false,
       //date
-      date: "",
+      // date: null,
       //user inputs
       //section One
       ePosta: "",
@@ -265,13 +289,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .mainKayitComponent {
   position: relative;
   bottom: 12rem;
   height: 423px;
   /* width: 468px; */
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -292,17 +317,14 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* border: 1px solid black; */
   margin-bottom: 53px;
   padding: 0;
 }
 .sections {
-  /* border: 1px solid black; */
 }
 .ONE {
   width: 468px;
   height: 400px;
-  /* border: 2px solid black; */
   /* display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -311,7 +333,6 @@ export default {
 .title {
   width: 146px;
   height: 29px;
-  /* border: 2px solid black; */
 
   /* baslik3 */
 
@@ -330,7 +351,6 @@ export default {
   margin-bottom: 18px;
 }
 .sections {
-  /* border: 2px solid black; */
   width: auto;
   height: 25px;
   display: flex;
@@ -347,7 +367,6 @@ export default {
 .section {
   height: 23px;
   width: 23px;
-  /* border: 1px solid black; */
   border-radius: 0px;
   margin-right: 8px;
 }
@@ -398,14 +417,13 @@ export default {
   display: none;
 } */
 .vectorContainer {
-  height: 100%;
-  width: 100%;
+  height: 23px;
+  width: 23px;
   background: #ff8038;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .sectionChecked {
@@ -420,7 +438,6 @@ export default {
 .box {
   height: 423px;
   width: 468px;
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -448,6 +465,43 @@ input {
   /* Primary */
   color: #3c4e69;
 }
+
+.picker {
+  width: 468px;
+  height: 60px;
+  background: #ffffff;
+
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+  /* Primary */
+  color: #3c4e69;
+}
+.dp__pointer,
+.dp__input,
+.dp__input_icon_pad {
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+  /* identical to box height, or 16px */
+  /* Primary */
+  color: #3c4e69;
+  border: none !important;
+  padding: 0 12px 0 35px;
+}
+.dp__icon,
+.dp__input_icon,
+.dp__input_icons {
+  /* border: 2px solid red; */
+  padding-bottom: 1.8rem;
+}
 /* to style the placeholder separately from the input text */
 input::placeholder {
   /* form-baslik */
@@ -461,6 +515,7 @@ input::placeholder {
   /* Gri */
   color: #818b9a;
   padding-left: 15px;
+  padding-bottom: 5px;
 }
 
 .button {
@@ -510,7 +565,6 @@ input::placeholder {
   flex-direction: row;
   /* justify-content: center;
   align-items: center; */
-  /* border: 1px solid black; */
 }
 .uyruk {
   width: 100px;
@@ -548,7 +602,6 @@ input::placeholder {
 .tcNo {
   height: 60px;
   width: 348px;
-  /* border: 1px solid black; */
 
   border-radius: 6px;
 }
@@ -604,25 +657,7 @@ input::placeholder {
   background: #e9f3f9;
   margin-top: 35px;
 }
-.datePicker {
-  font-family: Nunito Sans !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-size: 16px !important;
-  line-height: 100% !important;
 
-  letter-spacing: -0.01em !important;
-
-  color: #818b9a !important;
-  width: 468px !important;
-  height: 60px !important;
-  border: none !important;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px !important;
-}
 .dropDownSelect {
   padding-left: 15px;
 }
@@ -631,11 +666,11 @@ input::placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
   width: 220px;
   height: 160px;
   position: absolute;
-  bottom: 12rem;
+  /* bottom: 12rem; */
+  top: 4.5rem;
   border-radius: 50%;
 }
 .uploadImageGroupContainer {
@@ -696,11 +731,35 @@ input::placeholder {
   letter-spacing: -0.01em;
 
   /* Primary */
-  /* border: 1px solid red; */
   color: #3c4e69;
 }
 .FOUR {
   margin-top: 145px;
+}
+::placeholder {
+  /* form-baslik */
+
+  font-family: Nunito Sans !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 100% !important;
+  /* identical to box height, or 16px */
+
+  letter-spacing: -0.01em !important;
+
+  /* Gri */
+
+  color: #818b9a !important;
+}
+/* for some reason, datepicker's color doesn't follow the other colors
+so I had to fix it by choosing a color by hand */
+.dp__input::placeholder {
+  color: #575d66 !important;
+}
+.dp__button,
+.dp__button_bottom {
+  display: none;
 }
 
 @media only screen and (max-width: 550px) {
@@ -708,6 +767,10 @@ input::placeholder {
     /* height: 100%; */
     width: 325px;
   }
+  .picker {
+    width: 325px;
+  }
+
   .button {
     width: 325px;
   }
@@ -722,10 +785,6 @@ input::placeholder {
   .dropDownSelect {
     width: 325px;
     /* height: 60px; */
-  }
-  .datePicker {
-    width: 325px !important;
-    /* height: 60px !important; */
   }
 }
 </style>
